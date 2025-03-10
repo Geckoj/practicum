@@ -13,7 +13,7 @@ jobs:
         run: make check_fmt
       
       - name: Build
-        run: make build
+        run: make DIR_NAME=eq all
       
       - name: Test
         run: make test
