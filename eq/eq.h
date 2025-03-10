@@ -1,0 +1,1 @@
+double *calc_equation(double a, double b, double c);
