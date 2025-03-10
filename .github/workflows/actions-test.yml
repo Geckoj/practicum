@@ -9,11 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Run make from 'eq' directory
+        working-directory: ./eq
+        run: make -f Makefile
+      
       - name: Check-format
-        run: make -f eq/Makefile check_fmt
+        run: make check_fmt
       
       - name: Build
-        run: make -f eq/Makefile add
+        run: make all
       
       - name: Test
-        run: make -f eq/Makefile test
+        run: make test

@@ -1,5 +1,4 @@
-DIR_NAME := $(notdir $(CURDIR))
-
+DIR_NAME := eq
 clear:
 	rm -rf *.o *.a *_test
 
