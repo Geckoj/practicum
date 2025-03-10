@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check-format
-        run: make check_fmt
+        run: make -f eq/Makefile check_fmt
       
       - name: Build
-        run: make DIR_NAME=eq all
+        run: make -f eq/Makefile add
       
       - name: Test
-        run: make test
+        run: make -f eq/Makefile test
