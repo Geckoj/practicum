@@ -1,8 +1,19 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: CI
+
 on: [push]
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v4
+      
+      - name: Check-format
+        run: make check_fmt
+      
+      - name: Build
+        run: make all
+      
+      - name: Test
+        run: make test
